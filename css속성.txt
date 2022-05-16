@@ -1,0 +1,282 @@
+width , height
+값의 단위
+auto -> 기본값, 브라우저가 계산한 너비
+px -> 픽셀
+% -> 부모 요소에 상대적인 너비
+initial -> 기본값으로 초기화
+inherit -> 부모 요소로부터 상속 받은 값
+
+
+margin(바깥쪽여백), padding(안쪽여백)
+margin:10px -> 상하좌우 모두 10px 여백
+margin:20px 10px -> 상하 20px , 좌우 10px 여백
+margin:40px 30px 20px 10px -> 위 40px, 오른쪽 20px, 아래 20px, 왼쪽10px 여백
+margin:40px 30px 10px -> 위 40px, 좌우 30px, 아래 10px 여백
+margin-top -> 위 여백 지정
+margin-bottom -> 아래 여백 지정
+margin-left -> 왼쪽 여백 지정
+margin-right -> 오른쪽 여백 지정
+
+box-sizing
+content-box -> default값이다. width를 지정하여도 padding이나 다른 속성들이 들어오면 요소가 그만큼 커진다.
+border-box -> 다른 속성을 주어도 지정해둔 width 와 height의 크기를 벗어나지 않는다.
+
+color
+inherit -> 기본값 , 부모의 색상을 가져온다
+red 또는 blue -> 이미 css로 정의된 색상
+#000 또는 #FFFFFF -> 16진수의 색상코드
+rgb(255,255,255) -> rgb 색상
+rgba(200,100,150,0.5) -> 알파(투명도)가 적용된 rgba 색상
+
+font
+font 의 속성들
+font-style -> 기울기 등의 스타일 지정 (>> nomal : 기본>> italic : 기울기)
+font-weight -> 글자 두께
+font-variant -> 글꼴 변형 (소문자를 대문자로 바꾸는 등)
+font-size -> 글자 크기
+line-height -> 줄 간격
+font-family -> 글꼴
+
+font-weight 값
+100~900 사이의 숫자를 통해 설정하거나, 지정된 값을 사용한다.
+lighter (100)
+normal (400)
+bold (700)
+bolder (900)
+
+font-size 값
+글자 크기로, px 나 em(반응형웹에서 다룬다)등을 사용한다.
+
+font-family 값
+font 태그의 face 속성과 같다.
+통상적으로 구글폰트에서 가져와서 head내부에 link태그로 External방식으로 적용시킨다
+
+
+
+text-align
+값
+left
+right
+center
+jutify -> 양쪽 정렬
+
+
+background
+background-color -> 배경 색
+background-image -> 배경 이미지
+background-repeat -> 배경 이미지 반복 여부
+background-position -> 배경 이미지 위치
+
+background-color 값
+color 의 값과 동일하다
+
+background-image 값
+배경이미지를 설정하며 , 이미지 경로를 지정한다.
+ex ) background-image:url("이미지 경로나 이미지url주소")
+
+
+background-repeat 값
+no-repeat -> 반복안함
+repeat-x -> x축으로 반복
+repeat-y -> y축으로 반복
+repeat -> 모든 방향으로 반복
+
+
+background-position 값
+숫자값 (x , y)
+left
+top
+center
+bottom
+right
+
+
+
+border
+속성
+border-width -> 테두리의 두께 px 단위사용
+border-style -> 테두리의 스타일
+border-color -> 테두리의 색상 .. color 값과 동일함
+border-style 값
+solid 실선
+dotted 점선
+dashed 조금긴 점선
+
+특정 테두리의 방향만 따로 설정
+border-top
+border-bottom
+border-left
+border-right
+특정 방향만 색, 두께, 스타일을 따로 지정할 수 있다.
+ex ) border-bottom-color:red;
+
+border 속성으로 한꺼번에 지정하기 예제 )
+#box{border:border-width border-style border-color;}
+
+
+border-radius
+테두리를 둥글게 만들어주는 속성이다. px와 % 단위를 사용한다. border 속성 없이도 사용 가능하다.
+총 4개의 모서리를 각각 다른 값으로 줄 수 있다. 4개의 값을 띄어쓰면 왼쪽 위 부터 시계 방향으로 각자 다른값을 지정한다.
+
+ex ) #box{border-radius:5px;}
+여러 방향 다르게 지정 ex ) #box{border-radius:1px 2px 3px 4px;}
+
+
+visibility
+4가지 값을 가지며, default값은 inherit 이다.
+
+속성
+visible -> 보임
+hidden -> 숨김 (대신 영역은 차지함)
+collapse -> 겹치도록 지정 (테이블 행과 열 요소만 지정할 수 있으며, 그외 요소 지정 시 hidden으로 해석)
+inherit -> default 값, 부모 요소의 값을 상속
+
+
+
+display
+요소를 어떻게 보여줄지 지정함. 4가지 값을 가짐.
+
+속성
+none -> 보이지 않음
+block -> 블록 박스 (세로)
+inline -> 인라인 박스 (가로)
+inline-block -> 블록과 인라인의 중간 형태
+none
+요소를 렌더링 하지 않음. visibility 의 hidden과 달리 영역도 차지하지 않음.
+
+
+block
+가로 영역을 모두 채우며, 줄 바꿈이 됨
+
+inline
+span 태그 처럼 block 과 달리 줄 바꿈이 되지 않음. width와 height를 지정할 수 없다.
+
+
+inline-block
+block 과 inline 의 중간 형태이다. 줄 바꿈이 되지 않지만 크기를 지정할 수 있다.
+
+
+float
+해당 요소를 어떻게 배치 할건지 지정하는 속성이다.
+left 나 right 를 통해 배치할 시 diplay 속성은 무시된다.
+이후 요소에 clear 속성이 있으면 페이지의 흐름이 달라진다.
+
+속성
+inherit -> 부모 요소 상속
+left -> 왼쪽에 배치
+right -> 오른쪽에 배치
+none -> 배치하지 않음
+clear
+float 속성을 통해 태그를 배치한 이후 문서의 흐름을 제거하기 위해 사용된다.
+방향에 따라 3가지 속성을 사용할 수 있다.
+
+값
+left -> 좌측 배치 제거
+right -> 우측 배치 제거
+both -> 양쪽 모두 제거
+after 가상선택자와 float
+clear 해주기 위해서는 float 된 요소 다음에 clear를 지정해야하는 번거로움이 있다. 이때 가상 선택자를 이용하면 편하다. 배치를 제거하고 싶은 컨테이너에 다음 예제를 적용하면 된다.
+
+
+ex ) .box:after{clear:both;}
+
+position
+요소를 어떻게 위치시킬지 정의한다. 5가지 값을 가진다.
+
+값
+static -> default값, 다른 태그와의 관계에 의해 자동으로 배치됨 . 임의로 설정 불가
+absolute -> 절대 좌표와 함께 위치를 지정해 줄 수 있다.
+relative -> 원래 있던 위치를 기준으로 좌표를 지정한다.
+fixed -> 스크롤과 상관없이 항상 문서 최 좌측 상단을 기준으로 좌표를 고정한다.
+inherit -> 부모 태그를 상속받음.
+absolute 옵션은 부모 태그의 position 속성값이 static이 아니면 부모의 엘리먼트에서 위치가 이동된다.
+
+position 속성을 static을 제외한 값을 주면 top , left , bottom , right 속성을 사용하여 원하는 곳에 요소를 배치 시킬 수 있다.
+
+cursor
+해당 요소 위에 위치하는 마우스 커서의 모양을 바꿀 수 있다.
+
+값
+auto -> 자동
+default -> 기본 값 (화살표)
+pointer -> 손가락 모양 (클릭 가능한 버튼)
+wait -> 로딩
+등등 다양한 속성값들이 존재한다.
+
+text-decoration
+글자의 데코레이션을 지정한다.
+
+값
+none
+overline -> 윗줄
+underline -> 아랫줄
+line-though -> 가운뎃줄
+underline overline -> 윗줄과 아랫줄
+text-decoration 속성은 a:hover 또는 a:visit , a:visited 가상클래스와 함께 사용하면 좋다.
+overflow
+요소가 영역을 벗어날때 지정하는 속성.
+
+값
+visible -> 요소가 영역을 벗어나도 보여줌
+hidden -> 요소가 영역을 벗어나면 숨김
+scroll -> 스크롤바를 만들어 벗어난 영역이 스크롤되게 함
+z-index
+position 속성을 이용하면 요소를 겹치게 놓을 수 있는데, 이때 요소들의 겹치는 순서를 z-index로 지정한다. 값은 정수이며 숫자가 클 수록 위로 올라오며 작을 수록 아래로 내려간다.
+
+transition
+트랜지션 css 는 css 속성을 변경할때 애니메이션 속도를 조절하는 방법으로 쓰인다. 주로 javascript와 함께 쓰인다. 브라우저마다 달라서 속성마다 브라우저 접두어를 사용하여야 한다.
+여러 속성들이 존재한다. 모든 transition 속성들을 transition 속성 하나만으로 한꺼번에 쓸 수 있다. IE는 버전 10부터 지원한다.
+
+해당요소에 추가할 css 전환(transition) 효과를 설정한다.
+추가할 전환 효과가 지속될 시간을 설정한다.
+속성
+transition-delay -> 전환효과의 시작을 연기하는 시간을 설정한다.
+transition-duration -> 전환효과 총 시간을 설정한다.
+transition-property -> 요소에 추가할 전환효과를 설정한다.
+transition-timing-function -> 전환효과의 진행속도를 설정한다.
+transition-delay
+transition-delay : time | initial | inherit
+기본값은 0s 이다.
+시간 단위는 초(s) 또는 1/1000(ms)를 사용한다.
+initial : 기본값으로 설정함
+inherit : 부모 요소 상속
+
+transition-duration
+transition-delay와 같다
+
+
+transition-property
+transition-property : none | all | property | initial | inherit
+none : 모든 속성에 적용하지 않음
+all : 모든 속성에 적용
+property : 속성을 정한다. 여러개 속성을 지정할 경우 쉼표로 구분한다.
+initial : 기본값으로 설정함
+inherit : 부모 요소 상속
+
+
+transition-timing-function
+* transition-timing-function : ease | linear | ease-in | ease-out | ease-in-out | step-start | step-end | steps(n,start|end) | cubic-bezier(n,n,n,n) | initial | inherit
+default값은 ease 이다
+ease : cubic-bezier( 0.25, 0.1, 0.25, 1 )과 같다.
+linear : cubic-bezier( 0, 0, 1, 1 )과 같다.
+ease-in : cubic-bezier( 0.42, 0, 1, 1 )과 같다.
+ease-out : cubic-bezier( 0, 0, 0.58, 1 )과 같다.
+ease-in-out : cubic-bezier( 0.42, 0, 0.58, 1 )과 같다.
+step-start : steps( 1, start )와 같다.
+step-end : steps( 1, end )와 같다.
+steps( n, start|end ) : n단계로 나누어서 변화한다. start 또는 end를 입력하지 않으며 end로 처리한다.
+cubic-bezier( n, n, n, n ) : n에는 0부터 1까지의 수를 넣는다.
+initial : 기본값으로 설정한다.
+inherit : 부모 요소 상속
+
+transition 속성 한번에 쓰는 예제 )
+#box{transition:property timing-function delay | initial | inherit}
+
+브라우저 접두어
+어떠한 속성들은 브라우저마다 css가 달라서, 브라우저 별 접두어를 css속성 앞에 붙인다.
+
+접두어
+-webkit- -> 구글 , 사파리
+-moz- -> 파이어폭스
+-ms- -> 익스플로러 (보통 생략)
+-o- -> 오페라
